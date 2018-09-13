@@ -9,7 +9,10 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 3. Launches the chosen emulator with the playable file
 4. Removes the files after the emulator has closed (you can keep them "cached" afterwards for faster load times instead if you like, too!)
 
-**7zEmuPrepper** uses command-line arguments to select it's options; how these are put together on various different "front-ends" varies, but in it's simplest terms, each in quotes and seperated by a single space, you will need the following in order:
+# Usage
+This **PowerShell** script has been converted into a `.exe` for usage. You can use the `.exe` provided here, but if you don't trust me (and why would you?) then I have also included **"PS2EXE.ps1"**, which is the tool I used that converts **PowerShell** scripts to `.exe` files. Using this, you can review the **LB2PCSX2.ps1** code, and compile your own `.exe` file. See the [Microsoft PS2EXE Download Page](https://gallery.technet.microsoft.com/scriptcenter/PS2EXE-GUI-Convert-e7cb69d5) for more information on how to use this (it's super easy).
+
+Once you have the `.exe` file ready, all that’s left to do is set up the command-line arguments. **7zEmuPrepper** uses command-line arguments to select it's options; how these are put together on various different "front-ends" varies, but in it's simplest terms, each in quotes and seperated by a single space, you will need the following in order:
 
 1. The path of the 7zEmuPrepper `.exe` file
 2. The path of the 7-Zip `.exe` file
