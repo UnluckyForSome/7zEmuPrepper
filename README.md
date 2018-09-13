@@ -1,3 +1,5 @@
+This script is designed for various **front-ends**. **LaunchBox** can do this itself, but has trouble with Original Redump PS2 games. If you're using those with LaunchBox, try my [LaunchBox-to-PCSX2-Extractor](https://github.com/UnluckyForSome/LaunchBox-to-PCSX2-Extractor).
+
 # 7zEmuPrepper
 
 I compress all of my disc-based games (I have full sets so must do this to fit them all on my disk) - which saves a lot of space, but means compatibility is reduced as some emulators won't load compressed files. **7zEmuPrepper** acts as an intermediary between front-end and emulator. In simple terms the steps the script takes are as follows:
