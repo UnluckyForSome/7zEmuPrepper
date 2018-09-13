@@ -27,3 +27,10 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 
 #### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, whilst keeping the extracted file in place afterwards
 `"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "%ROM%"`
+
+# Troubleshooting
+- Remember, different frontends work differently - sometimes you will be asked to provide an "Emulator Path", which is what you need to point towards **7zEmuPrepper.exe**. You can then remove this from the rest of the command.
+
+- Try and use `PROGRA~1` instead of `Program Files` in your paths. The space sometimes messes things up.
+
+- Emulator arguments with special characters like the hyphen `-` need **triple quoting**. See how I have quoted `--nogui` in the PCSX2 example above.
