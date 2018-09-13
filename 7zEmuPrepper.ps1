@@ -33,7 +33,7 @@ $fileName = [System.IO.Path]::GetFileNameWithoutExtension("$filePath")
 Set-Location -Path $extractionPath
 
 # Perform a general pass of filetypes to try and launch if emulator is not identified in the following steps
-$extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension -Match -Value 'CUE|BIN|ISO' | Select-Object -Last 1 -ExpandProperty FullName
+$extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension -Match -Value 'GDI|CUE|BIN|ISO' | Select-Object -Last 1 -ExpandProperty FullName
 
 # Identify PCSX2 as the emulator and search for the right type of files to launch
 if ($emulatorPath -Match 'pcsx2.exe')
@@ -44,7 +44,7 @@ $extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension
 # Identify RetroArch as the emulator and search for the right type of files to launch
 if ($emulatorPath -Match 'retroarch.exe')
 {
-$extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension -Match -Value 'CUE|BIN|ISO' | Select-Object -Last 1 -ExpandProperty FullName
+$extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension -Match -Value 'GDI|CUE|BIN|ISO' | Select-Object -Last 1 -ExpandProperty FullName
 }
 
 # Launch emulator
