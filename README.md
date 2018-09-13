@@ -7,7 +7,7 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 3. Launches the chosen emulator with the playable file
 4. Removes the files after the emulator has closed (you can keep them "cached" afterwards for faster load times instead if you like, too!)
 
-**7zEmuPrepper** uses command-line arguments to select it's options; how these are put together on various different "front-ends" varies, but in it's simplest terms, each in quotes and seperated by a single space, you will need the following:
+**7zEmuPrepper** uses command-line arguments to select it's options; how these are put together on various different "front-ends" varies, but in it's simplest terms, each in quotes and seperated by a single space, you will need the following in order:
 
 1. The path of the 7zEmuPrepper `.exe` file
 2. The path of the 7-Zip `.exe` file
