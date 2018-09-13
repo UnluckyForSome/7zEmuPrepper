@@ -20,13 +20,13 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 # Examples
 
 #### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core
-`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "%ROM%"`
+`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\TempExtraction" "%ROM%"`
 
 #### Command for running a PS2 game (4x4 Evo) from a desktop shortcut using PCSX2
-`"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\Recent\Recent" "D:\PS2\4x4 Evo (USA).7z"`
+`"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\TempExtraction" "D:\PS2\4x4 Evo (USA).7z"`
 
 #### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, whilst keeping the extracted file in place afterwards
-`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "%ROM%"`
+`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\CachedGames" "%ROM%"`
 
 # Troubleshooting
 - Remember, different frontends work differently - sometimes you will be asked to provide an "Emulator Path", which is what you need to point towards **7zEmuPrepper.exe**. You can then remove this from the rest of the command.
