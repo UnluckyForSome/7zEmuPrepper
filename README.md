@@ -17,6 +17,8 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 6. The path of the game archive (the front-end usually has this as "%ROM%")
 7. (Optional) the `-KeepExtracted` option will ensure that extracted games stay in the extraction folder and will not be deleted by the script after the emulator closes
 
+![LaunchBox Settings](https://i.imgur.com/3rcNefO.png)
+
 # Examples
 
 #### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core
