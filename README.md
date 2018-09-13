@@ -9,6 +9,12 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 3. Launches the chosen emulator with the playable file
 4. Removes the files after the emulator has closed (you can keep them "cached" afterwards for faster load times instead if you like, too!)
 
+## Should support:
+Dreamcast in .GDI/.BIN
+PS2 in .BIN/.ISO/.CUE
+PS1 in .BIN/.CUE
+**Let me know if you would like support for additional filetypes!**
+
 # Usage
 This **PowerShell** script has been converted into a `.exe` for usage. You can use the `.exe` provided here, but if you don't trust me (and why would you?) then I have also included **"PS2EXE.ps1"**, which is the tool I used that converts **PowerShell** scripts to `.exe` files. Using this, you can review the **7zEmuPrepper.ps1** code, and compile your own `.exe` file. If you open up a PowerShell window, navigate to the directory **"ps2exe.ps1"** and **7zEmuPrepper.ps1** are both in, and type `./ps2exe.ps1 ./7zEmuPrepper.ps1 ./7zEmuPrepper.exe -noconfig` then your own `.exe` file will be compiled. See the [Microsoft PS2EXE Download Page](https://gallery.technet.microsoft.com/scriptcenter/PS2EXE-GUI-Convert-e7cb69d5) for more information on how to use this (it's super easy).
 
