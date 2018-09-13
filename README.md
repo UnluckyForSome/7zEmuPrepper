@@ -33,4 +33,4 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 
 - Try and use `PROGRA~1` instead of `Program Files` in your paths. The space sometimes messes things up.
 
-- Emulator arguments with special characters like the hyphen `-` need **triple quoting**. See how I have quoted `--nogui` in the PCSX2 example above.
+- Emulator arguments with double hyphens `--` need **triple quoting**. See how I have quoted `--nogui` in the PCSX2 example above.
