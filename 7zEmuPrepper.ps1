@@ -9,9 +9,12 @@ param (
     [string]$extractionPath, # Path to extract to
     [Parameter(Mandatory=$True)]
     [string]$filePath, # Exact location of the compressed file
+    [Parameter(Mandatory=$True)]
+    [string]$launchFile, # File extension to try and launch
     [Parameter(Mandatory=$False)]
     [switch]$KeepExtracted # Determines whether extracted files are kept or deleted
 )
+
 "7Zip Emu-Prepper by UnluckyForSome"
 ""
 "7Zip: [$7ZipPath]"
@@ -19,6 +22,7 @@ param (
 "Emulator Arguments: [$emulatorArguments]"
 "Archive: [$filePath]"
 "Extracting To: [$extractionPath]"
+"Filetype(s) To Launch: [$launchFile]"
 "Keep Extracted?: [$KeepExtracted]"
 ""
 
@@ -32,20 +36,8 @@ $fileName = [System.IO.Path]::GetFileNameWithoutExtension("$filePath")
 # Set location to where the files have been extracted
 Set-Location -Path $extractionPath
 
-# Perform a general pass of filetypes to try and launch if emulator is not identified in the following steps
-$extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension -Match -Value 'GDI|CUE|BIN|ISO' | Select-Object -Last 1 -ExpandProperty FullName
-
-# Identify PCSX2 as the emulator and search for the right type of files to launch
-if ($emulatorPath -Match 'pcsx2.exe')
-{
-$extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension -Match -Value 'BIN|ISO' | Select-Object -Last 1 -ExpandProperty FullName
-}
-
-# Identify RetroArch as the emulator and search for the right type of files to launch
-if ($emulatorPath -Match 'retroarch.exe')
-{
-$extractedFile = Get-Item -Path "$fileName.*" | Where-Object -Property Extension -Match -Value 'GDI|CUE|BIN|ISO' | Select-Object -Last 1 -ExpandProperty FullName
-}
+# Define the path of the correct file to try and launch with the emulator
+$extractedFile = Get-Item -Path "$fileName*.*" | Where-Object -Property Extension -Match -Value $launchFile | Select-Object -Last 1 -ExpandProperty FullName
 
 # Launch emulator
 "Launching emulator with [$extractedFile]..."
