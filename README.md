@@ -27,6 +27,8 @@ Once you have the `.exe` file ready, all that’s left to do is set up the comma
 
 # Command-Line Examples
 
+These examples may look daunting, but they're actually really simple - just seperate each argument with a space. They have to be in the order above.
+
 #### Running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which needs a .CUE file to launch
 `"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\TempExtraction" "cue" "%ROM%"`
 
