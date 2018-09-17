@@ -27,13 +27,13 @@ Once you have the `.exe` file ready, all that’s left to do is set up the comma
 
 # Command-Line Examples
 
-These examples may look daunting, but they're actually really simple - just seperate each argument with a space. They have to be in the order above.
+These examples may look daunting, but they're actually really simple - just seperate each argument with a space. They have to be in the order above. Remember spaces in quotes don't count as spaces in terms of arguments!
 
 #### Running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which needs a .CUE file to launch
 `"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\TempExtraction" "cue" "%ROM%"`
 
 #### Running a PS2 game (4x4 Evo) from a desktop shortcut using PCSX2, which needs a .BIN file to launch
-`"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\TempExtraction" "bin" "D:\PS2\4x4 Evo (USA).7z"`
+`"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """"--nogui""" """--fullscreen"""" "D:\Recent" "D:\PS2\4x4 Evo (USA).7z" "bin|iso"`
 
 #### Running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which needs a .CUE file to launch, whilst keeping the extracted file in place afterwards
 `"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\CachedGames" "cue" "%ROM%"`
