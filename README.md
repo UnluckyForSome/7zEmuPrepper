@@ -27,20 +27,24 @@ Once you have the `.exe` file ready, all that’s left to do is set up the comma
 4. Command-line arguments for the Emulator itself
 5. The path to extract the archive to
 6. The path of the game archive (the front-end usually has this as "%ROM%")
-7. (Optional) the `-KeepExtracted` option will ensure that extracted games stay in the extraction folder and will not be deleted by the script after the emulator closes
+7. The filetype you want the emulator to try to launch with (if multiple, seperate with a pipe `|`, 7zEmuPrepper will prioritise from right to left)
+8. (Optional) the `-KeepExtracted` option will ensure that extracted games stay in the extraction folder and will not be deleted by the script after the emulator closes
 
 ![LaunchBox Settings](https://i.imgur.com/3rcNefO.png)
 
 # Examples
 
-#### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core
-`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\TempExtraction" "%ROM%"`
+#### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which is in a .CUE format
+`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\TempExtraction" "cue" "%ROM%"`
 
-#### Command for running a PS2 game (4x4 Evo) from a desktop shortcut using PCSX2
-`"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\TempExtraction" "D:\PS2\4x4 Evo (USA).7z"`
+#### Command for running a PS2 game (4x4 Evo) which is in .BIN format, from a desktop shortcut using PCSX2
+`"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\TempExtraction" "bin" "D:\PS2\4x4 Evo (USA).7z"`
 
-#### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, whilst keeping the extracted file in place afterwards
-`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\CachedGames" "%ROM%"`
+#### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which is in a .CUE format, whilst keeping the extracted file in place afterwards
+`"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\CachedGames" "cue" "%ROM%"`
+
+#### Command for running a PS2 game from EmulationStation using PCSX2, which is in either a .BIN or a .ISO format
+`"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\TempExtraction" "bin|iso" "%ROM%"`
 
 # Troubleshooting
 - Remember, different frontends work differently - sometimes you will be asked to provide an "Emulator Path", which is what you need to point towards **7zEmuPrepper.exe**. You can then remove this from the rest of the command.
