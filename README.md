@@ -23,7 +23,7 @@ Once you have the `.exe` file ready, all that’s left to do is set up the comma
 7. **NEW** The filetype you want the emulator to try to launch with (if multiple, seperate with a pipe `|`, 7zEmuPrepper will prioritise from right to left)
 8. (Optional) the `-KeepExtracted` option will ensure that extracted games stay in the extraction folder and will not be deleted by the script after the emulator closes
 
-![LaunchBox Settings](https://i.imgur.com/3rcNefO.png)
+![LaunchBox Settings](https://i.imgur.com/wj43l3V.png)
 
 # Command-Line Examples
 
