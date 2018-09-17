@@ -15,15 +15,22 @@ param (
     [switch]$KeepExtracted # Determines whether extracted files are kept or deleted
 )
 
-"7Zip Emu-Prepper by UnluckyForSome"
-""
-"7Zip: [$7ZipPath]"
-"Emulator: [$emulatorPath]"
-"Emulator Arguments: [$emulatorArguments]"
-"Archive: [$filePath]"
-"Extracting To: [$extractionPath]"
-"Filetype To Launch: [$launchFile]"
-"Keep Extracted?: [$KeepExtracted]"
+#create the here-string
+$here_string = @"
+------------------------------------------------------------
+7Z-Emu-Prepper by UnluckyForSome
+------------------------------------------------------------
+7Zip                    = $7ZipPath
+Emulator                = $emulatorPath
+Emulator Arguments      = $emulatorArguments
+Archive                 = $filePath
+Extracting To           = $extractionPath
+Filetype(s) To Launch   = $launchFile
+Keep Extracted          = $keepExtracted
+"@
+
+# Print Intro & Settings
+$here_string
 
 # Define the individual filename without the rest of the path
 $fileName = [System.IO.Path]::GetFileNameWithoutExtension("$filePath")
@@ -35,18 +42,17 @@ $fileName = [System.IO.Path]::GetFileNameWithoutExtension("$filePath")
 Set-Location -Path $extractionPath
 
 if (Test-Path $fileName"."*) {
-"Already Extracted?: [True]"
+
 ""
 
 # Define the path of the correct file to try and launch with the emulator
 $extractedFile = Get-Item -Path "$fileName*.*" | Where-Object -Property Extension -Match -Value $launchFile | Select-Object -Last 1 -ExpandProperty FullName
-"Launching [$extractedFile]..."
+"Archive Already Extracted. Launching [$extractedFile]..."
 Start-Process $emulatorPath -ArgumentList $emulatorArguments, """$extractedFile""" -Wait
 
 
 }
 else {
-"Already Extracted?: [False]"
 ""
 
 # Start extraction in 7Zip, skip files already present and output progress
@@ -60,7 +66,7 @@ else {
 # Define the path of the correct file to try and launch with the emulator
 $extractedFile = Get-Item -Path "$fileName*.*" | Where-Object -Property Extension -Match -Value $launchFile | Select-Object -Last 1 -ExpandProperty FullName
 ""
-"Launching [$extractedFile]..."
+"Archive Extraction Complete. Launching [$extractedFile]..."
 Start-Process $emulatorPath -ArgumentList $emulatorArguments, """$extractedFile""" -Wait
 }
 # If "KeepExtracted" argument passed, exit before removal
