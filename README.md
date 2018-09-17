@@ -9,13 +9,6 @@ I compress all of my disc-based games (I have full sets so must do this to fit t
 3. Launches the chosen emulator with the playable file
 4. Removes the files after the emulator has closed (you can keep them "cached" afterwards for faster load times instead if you like, too!)
 
-## Should support:
-- Dreamcast in .GDI/.BIN
-- PS2 in .BIN/.ISO/.CUE
-- PS1 in .BIN/.CUE
-- Anything else in any of these formats...
-- **Let me know if you would like support for additional filetypes!**
-
 # Usage
 This **PowerShell** script has been converted into a `.exe` for usage. You can use the `.exe` provided here, but if you don't trust me (and why would you?) then I have also included **"ps2exe.ps1"**, which is the tool I used that converts **PowerShell** scripts to `.exe` files. Using this, you can review the **7zEmuPrepper.ps1** code, and compile your own `.exe` file. If you open up a PowerShell window, navigate to the directory **"ps2exe.ps1"** and **7zEmuPrepper.ps1** are both in, and type `./ps2exe.ps1 ./7zEmuPrepper.ps1 ./7zEmuPrepper.exe -noconfig` then your own `.exe` file will be compiled. See the [Microsoft PS2EXE Download Page](https://gallery.technet.microsoft.com/scriptcenter/PS2EXE-GUI-Convert-e7cb69d5) for more information on how to use this (it's super easy).
 
@@ -27,23 +20,23 @@ Once you have the `.exe` file ready, all that’s left to do is set up the comma
 4. Command-line arguments for the Emulator itself
 5. The path to extract the archive to
 6. The path of the game archive (the front-end usually has this as "%ROM%")
-7. The filetype you want the emulator to try to launch with (if multiple, seperate with a pipe `|`, 7zEmuPrepper will prioritise from right to left)
+7. **NEW** The filetype you want the emulator to try to launch with (if multiple, seperate with a pipe `|`, 7zEmuPrepper will prioritise from right to left)
 8. (Optional) the `-KeepExtracted` option will ensure that extracted games stay in the extraction folder and will not be deleted by the script after the emulator closes
 
 ![LaunchBox Settings](https://i.imgur.com/3rcNefO.png)
 
-# Examples
+# Command-Line Examples
 
-#### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which is in a .CUE format
+#### Running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which needs a .CUE file to launch
 `"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\TempExtraction" "cue" "%ROM%"`
 
-#### Command for running a PS2 game (4x4 Evo) which is in .BIN format, from a desktop shortcut using PCSX2
+#### Running a PS2 game (4x4 Evo) from a desktop shortcut using PCSX2, which needs a .BIN file to launch
 `"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\TempExtraction" "bin" "D:\PS2\4x4 Evo (USA).7z"`
 
-#### Command for running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which is in a .CUE format, whilst keeping the extracted file in place afterwards
+#### Running a PS1 game from EmulationStation using the RetroArch Beetle PSX HW core, which needs a .CUE file to launch, whilst keeping the extracted file in place afterwards
 `"C:/Users/Joe/.emulationstation/7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~1\RetroArch\retroarch.exe" "-L C:\PROGRA~1\RetroArch\cores\mednafen_psx_hw_libretro.dll -f" "D:\CachedGames" "cue" "%ROM%"`
 
-#### Command for running a PS2 game from EmulationStation using PCSX2, which is in either a .BIN or a .ISO format
+#### Running a PS2 game from EmulationStation using PCSX2, which is in either a .BIN or a .ISO format
 `"C:\Users\Joe\Documents\McWork\7zEmuPrepper.exe" "C:\PROGRA~1\7-Zip\7z.exe" "C:\PROGRA~2\PCSX2\pcsx2.exe" """--nogui""" "D:\TempExtraction" "bin|iso" "%ROM%"`
 
 # Troubleshooting
