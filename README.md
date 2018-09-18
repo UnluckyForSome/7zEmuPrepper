@@ -4,8 +4,8 @@ This script is designed for various **front-ends**. **LaunchBox** can do this it
 
 I compress all of my disc-based games (I have full sets so must do this to fit them all on my disk) - which saves a lot of space, but means compatibility is reduced as some emulators won't load compressed files. **7zEmuPrepper** acts as an intermediary between front-end and emulator. In simple terms the steps the script takes are as follows:
 
-1. Extracts the chosen archive into a location of your choice
-2. Works out which file is the correct file to launch the emulator with
+1. Extracts the chosen archive into a location of your choice (after checking if it's already there!)
+2. Uses your argument to determine which is the correct file to pass on to the emulator
 3. Launches the chosen emulator with the playable file
 4. Removes the files after the emulator has closed (you can keep them "cached" afterwards for faster load times instead if you like, too!)
 
